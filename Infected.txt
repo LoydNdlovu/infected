@@ -1,0 +1,22 @@
+** start of script.js **
+
+function infected(days) {
+  let infected = 1;
+
+  for (let day = 1; day <= days; day++) {
+    // Step 1: virus spreads
+    infected *= 2;
+
+    // Step 2: every 3rd day apply patch
+    if (day % 3 === 0) {
+      const patched = Math.ceil(infected * 0.2);
+      infected -= patched;
+    }
+  }
+
+  return infected;
+}
+
+
+** end of script.js **
+
